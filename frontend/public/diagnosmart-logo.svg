@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="240" fill="#ffffff" stroke="#2563eb" stroke-width="16"/>
+  
+  <!-- Brain Circuit Pattern -->
+  <g fill="none" stroke="#2563eb" stroke-width="12" stroke-linecap="round">
+    <path d="M156,256 C156,206 206,186 256,186 C306,186 356,206 356,256" />
+    <path d="M156,286 C156,336 206,356 256,356 C306,356 356,336 356,286" />
+    <circle cx="156" cy="256" r="8" fill="#2563eb"/>
+    <circle cx="356" cy="256" r="8" fill="#2563eb"/>
+    <circle cx="256" cy="186" r="8" fill="#2563eb"/>
+    <circle cx="256" cy="356" r="8" fill="#2563eb"/>
+  </g>
+  
+  <!-- Medical Cross -->
+  <g fill="#2563eb">
+    <rect x="236" y="216" width="40" height="80" rx="4"/>
+    <rect x="216" y="236" width="80" height="40" rx="4"/>
+  </g>
+  
+  <!-- Pulse Line -->
+  <path d="M186,286 L226,286 L241,246 L271,326 L286,286 L326,286" 
+        fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round"/>
+</svg>

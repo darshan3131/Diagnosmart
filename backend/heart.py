@@ -1,16 +1,22 @@
-import sys
-import numpy as np
-import pickle
-import json
-print("Python version:", sys.version)
-print("Python executable path:", sys.executable)
+#!/usr/bin/env python3
+"""
+Diagnosmart Heart Disease Prediction Model
+----------------------------------------
+This module provides heart disease prediction functionality using machine learning.
+"""
 
-with open('./ai-models/heart.pkl', 'rb') as model_fileL:
-    model = pickle.load(model_fileL)
+from utils.ml_utils import validate_args, handle_prediction
 
-data = list(json.loads(sys.argv[3]).values())
-data_array = np.array(data).reshape(1, -1)
-prediction = model.predict(data_array)
-values = np.asarray(data)
-model.predict(values.reshape(1, -1))[0]
-print(json.dumps(prediction.tolist()))
+# Define the features required for heart disease prediction
+FEATURES = [
+    'age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg',
+    'thalach', 'exang', 'oldpeak', 'slope', 'ca', 'thal'
+]
+
+def main():
+    """Main function to handle heart disease prediction."""
+    model_path, input_data = validate_args()
+    handle_prediction(model_path, input_data, FEATURES, 'heart')
+
+if __name__ == '__main__':
+    main()

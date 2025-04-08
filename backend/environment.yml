@@ -1,0 +1,13 @@
+name: diagnosmart
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy
+  - tensorflow
+  - scikit-learn
+  - pillow
+  - flask=1.1.1
+  - pip
+  - pip:
+    - pickle-mixin==1.0.2

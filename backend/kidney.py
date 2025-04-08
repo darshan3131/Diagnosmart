@@ -1,16 +1,26 @@
-import sys
-import numpy as np
-import pickle
-import json
-print("Python version:", sys.version)
-print("Python executable path:", sys.executable)
+#!/usr/bin/env python3
+"""
+Diagnosmart Kidney Disease Prediction Model
+-----------------------------------------
+This module provides kidney disease prediction functionality using machine learning.
+"""
 
-with open('./ai-models/kidney.pkl', 'rb') as model_fileL:
-    model = pickle.load(model_fileL)
+from utils.ml_utils import validate_args, handle_prediction
 
-data = list(json.loads(sys.argv[3]).values())
-data_array = np.array(data).reshape(1, -1)
-prediction = model.predict(data_array)
-values = np.asarray(data)
-model.predict(values.reshape(1, -1))[0]
-print(json.dumps(prediction.tolist()))
+# Define the features required for kidney disease prediction
+FEATURES = [
+    'age', 'blood_pressure', 'specific_gravity', 'albumin', 'sugar',
+    'red_blood_cells', 'pus_cell', 'pus_cell_clumps', 'bacteria',
+    'blood_glucose_random', 'blood_urea', 'serum_creatinine', 'sodium',
+    'potassium', 'hemoglobin', 'packed_cell_volume', 'white_blood_cell_count',
+    'red_blood_cell_count', 'hypertension', 'diabetes_mellitus',
+    'coronary_artery_disease', 'appetite', 'pedal_edema', 'anemia'
+]
+
+def main():
+    """Main function to handle kidney disease prediction."""
+    model_path, input_data = validate_args()
+    handle_prediction(model_path, input_data, FEATURES, 'kidney')
+
+if __name__ == '__main__':
+    main()

@@ -1,7 +1,7 @@
 {
-  "name": "ai-medlab",
+  "name": "diagnosmart-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend server for Diagnosmart - AI-Powered Healthcare Diagnostics",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "start": "node index.js",
     "start-dev": "nodemon index.js"
   },
-  "author": "Abdul Wahab",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -26,6 +26,7 @@
     "nodemailer": "^6.9.13",
     "pickle": "^0.2.0",
     "python-shell": "^5.0.0",
+    "razorpay": "^2.9.6",
     "scikit-learn": "^0.1.0",
     "stripe": "^14.17.0"
   }
